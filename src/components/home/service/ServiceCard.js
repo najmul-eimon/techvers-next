@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Link from "next/link";
-import { SharedContext } from "@/app/layout";
+import { SharedContext } from "@/layout/Layout";
 
 const ServiceCard = ({service}) => {
   const {id, icon, title, shortDescription} = service;

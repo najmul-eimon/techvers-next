@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import BookAppointment from './BookAppointment';
 import { services } from '@/data/service';
-import { SharedContext } from '@/app/layout';
+import { SharedContext } from '@/layout/Layout';
 
 const ServiceTab = () => {
   const {activeTab, setActiveTab} = useContext(SharedContext);

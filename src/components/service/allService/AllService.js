@@ -3,7 +3,7 @@ import BookAppointment from './BookAppointment';
 import ServiceTabContent from './ServiceTabContent';
 import { services } from '@/data/service';
 import { useContext } from 'react';
-import { SharedContext } from '@/app/layout';
+import { SharedContext } from '@/layout/Layout';
 
 const AllService = () => {
 const {activeTab} = useContext(SharedContext);

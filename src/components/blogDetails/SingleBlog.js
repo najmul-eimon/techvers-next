@@ -5,13 +5,13 @@ import {IoChevronForwardSharp, IoChevronBackSharp} from 'react-icons/io5';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const SingleBlog = ({blogId}) => {
+const SingleBlog = ({data}) => {
   const router = useRouter();
-  const singleBlog = blogs.find((blog) => blog.id === blogId);
-  const {introduction, image, conclusion, author, authorImg, designation, comments} = singleBlog || {};
+  const {introduction, image, conclusion, author, authorImg, designation, comments} = data || {};
 
-  const prevBlog = blogs[blogs.indexOf(singleBlog)-1]?.id
-  const nextBlog = blogs[blogs.indexOf(singleBlog)+1]?.id
+  const currentBlogIndex = blogs.findIndex(item => item.id === data.id);
+  const prevBlog = blogs[currentBlogIndex-1]?.id
+  const nextBlog = blogs[currentBlogIndex+1]?.id
 
   const handleBlog = (prop) => {
     router.push(`/blog/${prop}`);
@@ -87,7 +87,7 @@ const SingleBlog = ({blogId}) => {
 
             <div className="flex items-center justify-between">
               {/* previous button */}
-              <button onClick={()=>handleBlog(prevBlog)} disabled={blogs.indexOf(singleBlog)=== 0} type="button" className="flex items-center gap-4 text-start">
+              <button onClick={() => handleBlog(prevBlog)} disabled={currentBlogIndex === 0} type="button" className="flex items-center gap-4 text-start">
                 <span className="flex items-center justify-center h-8 md:h-10 w-8 md:w-10 rounded-full border border-secondary-text">
                   <IoChevronBackSharp className='text-base md:text-xl text-secondary-text'/>
                 </span>
@@ -98,7 +98,7 @@ const SingleBlog = ({blogId}) => {
               </button>
 
               {/* next button */}
-              <button onClick={()=>handleBlog(nextBlog)} disabled={blogs.indexOf(singleBlog)=== blogs.length-1} type="button" className="flex items-center gap-4 text-end">
+              <button onClick={() => handleBlog(nextBlog)} disabled={currentBlogIndex === blogs.length-1} type="button" className="flex items-center gap-4 text-end">
                 <div>
                   <span className="text-sm font-inter text-secondary-text block">NEXT</span>
                   <small className="text-base font-inter text-primary-text hidden md:block">How does screen work</small>

@@ -3,7 +3,7 @@ import BlogCard from '../../shared/BlogCard';
 import ReactPaginate from 'react-paginate';
 import BlogCategory from './BlogCategory';
 import {IoChevronForwardSharp, IoChevronBackSharp} from 'react-icons/io5';
-import { SharedContext } from '@/app/layout';
+import { SharedContext } from '@/layout/Layout';
 
 const AllBlog = () => {
   const {allBlogs} = useContext(SharedContext);

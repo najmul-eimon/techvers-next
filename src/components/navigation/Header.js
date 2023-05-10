@@ -3,17 +3,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { SharedContext } from '@/layout/Layout';
+import { useRouter } from 'next/router';
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const {setActiveTab, handleFilter} = useContext(SharedContext);
-  const basePath = usePathname();
-  const path = basePath.split('/')[1];
+  const {setActiveTab} = useContext(SharedContext);
+  const router = useRouter();
+  const path = router.pathname.split('/')[1];
 
   const handleNavLink = () => {
     setShowMenu(false);
     setActiveTab(0);
-    handleFilter('all');
+    localStorage.setItem('category', JSON.stringify("all"))
   }
 
   return (

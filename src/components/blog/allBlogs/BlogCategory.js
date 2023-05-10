@@ -1,14 +1,19 @@
 import { useContext } from 'react';
 import { blogCategory } from '@/data/blog';
-import { SharedContext } from '@/app/layout';
+import { SharedContext } from '@/layout/Layout';
 
 const BlogCategory = () => {
-  const {handleFilter, activeCategory} = useContext(SharedContext);
+  const { activeCategory, setActiveCategory} = useContext(SharedContext);
+
+  const handleFilter = (category) => {
+    setActiveCategory(category);
+    localStorage.setItem('category', JSON.stringify(category))
+  }
 
   return (
     <ul className="flex items-center gap-4 my-10 overflow-x-auto w-full scrollbar-hide blog-filter-btns">
       <li>
-        <button onClick={() => handleFilter('all')} type="button" data-filter="all" className="whitespace-nowrap rounded-lg border border-[#D2D1E0] px-4 py-2 flex items-center gap-3 text-primary-text text-xs md:text-base font-inter">
+        <button onClick={() => handleFilter('all')} type="button" className="whitespace-nowrap rounded-lg border border-[#D2D1E0] px-4 py-2 flex items-center gap-3 text-primary-text text-xs md:text-base font-inter">
           All
         </button>
       </li>

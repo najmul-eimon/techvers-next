@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
@@ -6,7 +7,7 @@ const CompanyCard = ({data}) => {
 
   return (
     <div className="w-1/2 md:w-1/4 text-center">
-      <img src={icon} className="mx-auto" alt="trophy"/>
+      <Image src={icon} className="mx-auto" alt="trophy" width={49} height={48}/>
       <h3 className="py-3 md:py-6 text-white text-[32px] lg:text-[56px] font-bold">
         <CountUp start={0} end={count}>
           {({ countUpRef, start }) => (
@@ -22,4 +23,4 @@ const CompanyCard = ({data}) => {
   )
 }
 
-export default CompanyCard;
+export default CompanyCard
