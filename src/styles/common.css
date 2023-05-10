@@ -1,0 +1,325 @@
+/*--------------------------------------------
+header
+----------------------------------------------*/
+.header .nav-link.active{
+  @apply text-primary;
+}
+
+.header .contact-btn::after{
+  content: '';
+  background-color: #203D4B;
+  @apply absolute bottom-0 left-0 h-0 w-full -z-[1] transition-all duration-300;
+}
+
+.header .contact-btn:hover::after{
+  @apply h-full;
+}
+
+@media screen and (min-width:768px) {
+  .header:hover{
+    @apply bg-secondary border-secondary;
+  }
+
+  .header:hover .main-logo{
+    @apply hidden;
+  }
+
+  .header:hover .white-logo{
+    @apply block;
+  }
+
+  .header:hover .nav-link{
+    @apply text-white;
+  }
+
+  .header:hover .nav-link.active{
+    @apply text-primary;
+  }
+
+  .header:hover .contact-btn{
+    @apply bg-white text-secondary;
+  }
+
+  .header:hover .contact-btn svg path{
+    @apply stroke-secondary;
+  }
+
+  .header .contact-btn:hover{
+    @apply text-white;
+  }
+
+  .header .contact-btn:hover svg path{
+    @apply stroke-white;
+  }
+}
+
+.social-icon-list svg path{
+  @apply transition-all duration-300;
+}
+
+.social-icon-list li a:hover svg path{
+  @apply fill-primary;
+}
+
+/*--------------------------------------------
+banner
+----------------------------------------------*/
+.banner{
+  background: url('/images/banner-bg.png') no-repeat center;
+  background-size: cover;
+}
+
+
+/*--------------------------------------------
+about
+----------------------------------------------*/
+
+@keyframes rotate {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation{
+  transform-origin: center;
+  animation: rotate 12s linear infinite;
+}
+
+/*--------------------------------------------
+service
+----------------------------------------------*/
+.service .single-item svg path{
+  @apply transition-all duration-300;
+}
+
+.service .single-item:hover .hover-color {
+  @apply fill-primary;
+}
+
+.service .single-item:hover .hover-odd {
+  @apply fill-primary-text;
+}
+
+.service .single-item:hover .more-btn svg path{
+  @apply fill-primary stroke-primary;
+}
+
+/*--------------------------------------------
+working-process
+----------------------------------------------*/
+@keyframes animateDash {
+  from {
+    width: 0%;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+.progress-svg {
+  animation: animateDash 10s ease-in-out forwards infinite;
+}
+
+.working-progress-card svg{
+  @apply h-[26px] md:h-[41px] w-[26px] md:w-[41px];
+}
+
+.working-progress-card:nth-child(2) svg{
+  @apply h-[26px] md:h-[40px] w-[26px] md:w-[38px];
+}
+
+/*--------------------------------------------
+project
+----------------------------------------------*/
+.project-slider .swiper-pagination-bullet{
+  height: 10px;
+  width: 10px;
+  background: #D9D9D9;
+  opacity: 1;
+}
+
+.project-slider .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+.project-slider .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 6px;
+}
+
+.project-slider .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  @apply bg-primary-text;
+}
+
+.project-slider .swiper-horizontal>.swiper-pagination-bullets, 
+.project-slider .swiper-pagination-bullets.swiper-pagination-horizontal, 
+.project-slider .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: -7px;
+}
+
+/*--------------------------------------------
+company
+----------------------------------------------*/
+.company{
+  background: url('/images/company-bg.png') no-repeat center;
+  background-size: cover;
+}
+
+/*--------------------------------------------
+contact
+----------------------------------------------*/
+@keyframes rotate {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-rev {
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+.contact .address{
+  background: url('/images/map.png') no-repeat center;
+}
+
+.rotate-animation{
+  transform-origin: center;
+  animation: rotate 8s linear infinite;
+}
+
+.rotate-reverse{
+  transform-origin: center;
+  animation: rotate-rev 8s linear infinite;
+}
+
+/*--------------------------------------------
+service-page
+----------------------------------------------*/
+.service-banner{
+  background: url('/images/service-bg.png') no-repeat center;
+  background-size: cover;
+}
+
+@media screen and (max-width:639px) {
+  .service-banner{
+    background: url('/images/service-bg-sm.png') no-repeat center;
+    background-size: cover;
+  }
+}
+
+.all-service .tabs-nav .active{
+  @apply font-semibold md:font-bold text-white bg-primary;
+}
+
+
+/*--------------------------------------------
+testimonial-page
+----------------------------------------------*/
+.testimonial-banner{
+  background: url('/images/testimonial-bg.png') no-repeat center;
+  background-size: cover;
+}
+
+@media screen and (max-width:639px) {
+  .testimonial-banner{
+    background: url('/images/testimonial-bg-sm.png') no-repeat center;
+    background-size: cover;
+  }
+}
+
+/*--------------------------------------------
+blog page
+----------------------------------------------*/
+.blog-banner{
+  background: url('/images/blog-bg.png') no-repeat center;
+  background-size: cover;
+}
+
+@media screen and (max-width:639px) {
+  .blog-banner{
+    background: url('/images/blog-bg-sm.png') no-repeat center;
+    background-size: cover;
+  }
+}
+
+.blog .blog-filter-btns .active span{
+  @apply bg-primary text-white;
+}
+
+.blog .pagination a{
+  @apply h-6 md:h-10 w-6 md:w-10 flex items-center justify-center rounded-[5px] font-inter text-secondary-text text-xs md:text-sm;
+}
+
+.blog .pagination .active a{
+  @apply bg-primary text-white font-bold;
+}
+
+.popular-blog-title{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+/*--------------------------------------------
+blog-details page
+----------------------------------------------*/
+.blog-details .reply-arrow::before{
+  content: '';
+  height: calc(100% - 20px);
+  width: 28px;
+  border-left: 1px solid #9ADDFE;
+  border-bottom: 1px solid #9ADDFE;
+  border-bottom-left-radius: 16px;
+  position: absolute;
+  top: 80px;
+  left: 32px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1023px) {
+  .blog-details .reply-arrow::before{
+    height: 100%;
+    width: 9px;
+    top: 46px;
+    left: 20px;
+  }
+}
+
+.blog-details .blog-filter-btns .active span{
+  @apply bg-primary text-white;
+}
+
+/*--------------------------------------------
+not-found page
+----------------------------------------------*/
+.back-to-home::after,
+.back-to-home::before{
+  content: '';
+  top: -4px;
+  right: -35px;
+  border-radius: 50%;
+  transition: all linear 0.8s;
+  @apply absolute bg-primary;
+}
+
+.back-to-home::after{
+  height: 100px;
+  width: 100px;
+}
+
+.back-to-home::before{
+  height: 150px;
+  width: 150px;
+  opacity: 0;
+}
+
+.back-to-home:hover::after{
+  height: 150px;
+  width: 150px;
+}
+
+.back-to-home:hover::before{
+  height: 500px;
+  width: 500px;
+  border-radius: 0;
+  opacity: 1;
+}
