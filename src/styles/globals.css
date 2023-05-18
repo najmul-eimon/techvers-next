@@ -37,3 +37,8 @@ body{
 .scrollbar-hide{
   scrollbar-width: none;
 }
+
+
+.odometer.odometer-auto-theme, .odometer.odometer-theme-default{
+  font-family: 'TimesNewRoman';
+}

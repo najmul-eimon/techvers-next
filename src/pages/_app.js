@@ -1,3 +1,4 @@
+import 'odometer/themes/odometer-theme-default.css'
 import '@/styles/globals.css'
 import '@/styles/common.css'
 import 'swiper/css';
