@@ -15,7 +15,13 @@ const Layout = ({children}) => {
   const [allBlogs, setAllBlogs] = useState([]);
 
   useEffect(() => {
-    setActiveCategory(JSON.parse(localStorage.getItem('category')));
+    if(localStorage.getItem('category') !== null){
+      setActiveCategory(JSON.parse(localStorage.getItem('category')));
+    }
+    else{
+      localStorage.setItem('category', JSON.stringify('all'))
+      setActiveCategory('all')
+    }
     setAllBlogs(activeCategory === "all" ? blogs : blogs.filter((blog) => blog.category.toLowerCase() === activeCategory.toLowerCase()))
   }, [activeCategory])
 
