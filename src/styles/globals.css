@@ -40,5 +40,5 @@ body{
 
 
 .odometer.odometer-auto-theme, .odometer.odometer-theme-default{
-  font-family: 'TimesNewRoman';
+  font-family: 'TimesNewRoman' !important;
 }
