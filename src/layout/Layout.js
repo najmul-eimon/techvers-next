@@ -1,7 +1,6 @@
 import Header from '@/components/navigation/Header';
 import Footer from '@/components/navigation/footer/Footer';
 import { blogs } from '@/data/blog';
-import Head from 'next/head';
 import { createContext, useEffect, useState } from 'react';
 
 export const SharedContext = createContext();
