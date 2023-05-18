@@ -11,6 +11,10 @@
   font-style: normal;
 }
 
+body{
+  font-family: 'TimesNewRoman';
+}
+
  html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
