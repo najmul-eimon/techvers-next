@@ -5,7 +5,7 @@ import Image from "next/image";
 import { SharedContext } from "@/layout/Layout";
 import { useRouter } from "next/router";
 
-const BlogSidebar = () => {
+const BlogSidebar = ({singleBlog}) => {
   const {setActiveCategory} = useContext(SharedContext);
   const popularBlogs = blogs.filter((blog) => blog.status.toLowerCase() === 'popular');
   const blogTags = ["Adventures", "Business", "WordPress", "SEO"];
@@ -25,7 +25,7 @@ const BlogSidebar = () => {
           {
             blogCategory.map(({id, title, count}) => (
               <li key={id}>
-                <button onClick={() => handleFilter(title)} className="flex items-center justify-between py-[7px] pl-4 w-full text-base font-inter text-primary-text">
+                <button onClick={() => handleFilter(title)} className={`${title.toLowerCase() === singleBlog.category.toLowerCase() && 'active'} flex items-center justify-between py-[7px] pl-4 w-full text-base font-inter text-primary-text`}>
                   {title}
                   <span className="flex items-center justify-center h-[30px] w-[30px] rounded bg-[#FCE3E4] font-medium text-base">{count}</span>
                 </button>

@@ -114,7 +114,7 @@ const SingleBlog = ({data}) => {
           </div>
 
           {/* right-part */}
-          <BlogSidebar/>
+          <BlogSidebar singleBlog={data}/>
         </div>
       </div>
     </section>

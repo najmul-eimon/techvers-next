@@ -18,7 +18,7 @@ const AddressCard = ({data}) => {
       <h4 className="py-4 text-sm md:text-base font-bold text-primary-text font-inter">{title}</h4>
       <p className="pb-4 text-xs lg:text-sm xl:text-base font-inter text-primary-text">{description}</p>
 
-      <Link href={title.toLowerCase() === 'email' ? `mailto:${email}` : title.toLowerCase() === 'phone' ? `tel:${phone}` : ''} className="inline-block w-40 text-center py-2 rounded-md border border-primary text-primary font-inter font-bold text-base transition-all duration-300 hover:bg-primary hover:text-white">
+      <Link href={title.toLowerCase() === 'email' ? `mailto:${email}` : title.toLowerCase() === 'phone' ? `tel:${phone}` : ''} className="inline-block w-full sm:w-40 text-center py-2 rounded-md border border-primary text-primary font-inter font-bold text-sm md:text-base transition-all duration-300 hover:bg-primary hover:text-white">
         {title.toLowerCase() === 'email' ? 'Contact' : title.toLowerCase() === 'phone' ? 'Call' : 'Location'}
       </Link>
     </div>

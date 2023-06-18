@@ -71,7 +71,7 @@ const FooterTop = () => {
 
             <div className="flex items-center gap-7 mt-6 w-full">
               <div className="w-1/2">
-                <h4 className="pb-6 text-white font-inter text-sm sm:text-base font-bold">Your email address</h4>
+                <h4 className="pb-6 text-white font-inter text-sm sm:text-base font-bold">Let&apos;s Talk</h4>
                 <p className="flex items-center gap-[6px] sm:gap-2 text-white/70 text-sm font-inter">
                   <Image src="/images/icons/email.svg" alt="Email" width={20} height={20}/>
                   yourname@mail.com

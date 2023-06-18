@@ -1,13 +1,13 @@
 export const companies = [
   {
     id: "c1",
-    title: "Winning Award",
+    title: "Winning Awards",
     count: 32,
     icon: "/images/icons/trophy-outline.svg"
   },
   {
     id: "c2",
-    title: "Total Project",
+    title: "Total Projects",
     count: 1000,
     icon: "/images/icons/projector-screen-chart.svg"
   },

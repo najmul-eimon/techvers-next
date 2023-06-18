@@ -27,15 +27,16 @@ const CompanyCard = ({data}) => {
         <h3 className="py-3 md:py-6 text-white text-[32px] lg:text-[56px] font-bold">
           <VisibilitySensor onChange={onVisibilityChange} offset={{top: 10}} delayedCall>
             <span>
-            <Odometer
-              format="d"
-              duration={2000}
-              value={show ? count : 0}
-            />
-            {id === 'c2' && '+'}
+              <Odometer
+                animation='count'
+                format="d"
+                duration={2000}
+                value={show ? count : 0}
+              />
+              {id === 'c2' && '+'}
             </span>
           </VisibilitySensor>
-          </h3>
+        </h3>
       <p className="font-inter text-sm md:text-base text-white font-medium">{title}</p>
     </div>
   )
